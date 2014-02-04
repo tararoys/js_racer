@@ -21,3 +21,11 @@ th {
 .racer_table td.active {
   background-color: tomato;
 }
+
+#again {
+  display: none;
+}
+
+a {
+  color: tomato;
+}

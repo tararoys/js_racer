@@ -2,8 +2,8 @@ class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
       t.string :name
-      t.integer :winner
-      t.time :time
+      t.string :winner
+      t.string :time
       t.timestamps
     end
   end

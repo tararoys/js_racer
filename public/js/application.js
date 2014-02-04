@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+  var player1 = $(".racer_table").data('player-one');
+  var player2 = $('.racer_table').data('player-two');
   var done = false;
   var logevent = [];
 
@@ -31,24 +32,23 @@ $(document).ready(function() {
         done = true
         var finish_time = new Date().getTime();
         if (finish_time) time = (finish_time - start_time);
-        $('#declare_winner').html('Player 1 Wins ' + time/1000 + 'seconds');
-        winner = 1
+        $('#declare_winner').html(player1 + ' Wins ' + time/1000 + 'seconds');
+        $('#again').show();
+        winner = player1
       }
       else if ($('#finish_line2').hasClass('active') ){
         done = true
         var finish_time = new Date().getTime();
         if (finish_time) time = (finish_time - start_time);
-        $('#declare_winner').html('Player 2 Wins ' + time/1000 + 'seconds');
-        winner = 2
+        $('#declare_winner').html(player2 + ' Wins ' + time/1000 + 'seconds');
+        winner = player2;
+        $('#again').show()
+
       }
 
-
-      if (time){
         form_data = {'time': time, 'winner': winner }
         $.post("/game", form_data, function(response){
-          console.log("yolo");
         });
-       }
 
     }
   });

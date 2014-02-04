@@ -1,5 +1,5 @@
 <h1>Racers Start Your Engines</h1>
-<table class="racer_table">
+<table class="racer_table" data-player-one='<%= session[:player1].capitalize %>' data-player-two='<%= session[:player2].capitalize %>'>
   <tr>
     <td>Name</td>
     <td>Button</td>
@@ -53,3 +53,6 @@
   </tr>
 </table>
 <h3 id='declare_winner'>And the winner is...</h3>
+<h3><a id='again' href='/again'>Play again</a></h3>
+<br>
+<a href='/exit'>Exit Game</a>
